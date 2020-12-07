@@ -1,0 +1,13 @@
+bin
+.swiftpm
+*~
+.build
+.DS_Store
+Pods
+*~
+\#*#
+xcuserdata
+.#*
+~$*
+__pycache__
+*.pyc 
