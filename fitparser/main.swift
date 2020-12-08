@@ -28,7 +28,8 @@ struct FitJson: ParsableCommand {
         }
         let elapsed = Date().timeIntervalSince(start)
         let f = URL(fileURLWithPath: self.file).lastPathComponent
-        print( "time: fitparser \(f) \(elapsed) seconds" )
+        print( String(format: "| swift/c | fitparser | %@ | %.3f seconds | [FitFileParser](https://github.com/roznet/FitFileParser) | ", f, elapsed) )
+
     }
 }
 

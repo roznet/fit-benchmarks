@@ -5,11 +5,8 @@ INSTALLDIR=$(DEST)/usr/local/bin
 test:testsample testlarge
 
 testsample: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
-	$(INSTALLDIR)/fitparser sample.fit > /dev/null
 	time $(INSTALLDIR)/fitparser sample.fit
-	$(INSTALLDIR)/fitprotocol sample.fit > /dev/null
 	time $(INSTALLDIR)/fitprotocol sample.fit
-	$(INSTALLDIR)/fitsdkcpp sample.fit > /dev/null
 	time $(INSTALLDIR)/fitsdkcpp sample.fit
 	time php php/fitanalysis.php sample.fit
 	time python3 python/fitfitparse.py sample.fit
@@ -17,7 +14,6 @@ testsample: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fits
 
 
 testlarge: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
-	$(INSTALLDIR)/fitparser large.fit > /dev/null
 	time $(INSTALLDIR)/fitparser large.fit
 	time $(INSTALLDIR)/fitprotocol large.fit
 	time $(INSTALLDIR)/fitsdkcpp large.fit
@@ -25,6 +21,8 @@ testlarge: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsd
 	time python3 python/fitfitparse.py large.fit
 	time python3 python/fitfitdecode.py large.fit
 
+clean:
+	/bin/rm $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
 
 $(INSTALLDIR)/fitparser:
 	xcodebuild -scheme fitparser DSTROOT=$(DEST) install

@@ -32,37 +32,21 @@ Interestingly, and a bit surprisingly to me, the php library [phpFITFileAnalysis
 
 Given the two fastest library are the one used in practice by [ConnectStats](https://github.com/roznet/connectstats) and [its server](https://github.com/roznet/connectstats_server), it won't be necessary to make any changes.
 
-### Time reported by the `time` utility
-
-| language | command         | file       | real time  | user time  | sys time | Library                                                                          |
-|----------|-----------------|------------|------------|------------|----------|----------------------------------------------------------------------------------|
-| swift/c  | fitparser       | sample.fit | 0.04 real  | 0.03 user  | 0.00 sys | [FitFileParser](https://github.com/roznet/FitFileParser)                         |
-| php      | fitanalysis.php | sample.fit | 0.16 real  | 0.11 user  | 0.01 sys | [phpFITFileAnalysis.php](https://github.com/adriangibbons/php-fit-file-analysis) |
-| swift    | fitprotocol     | sample.fit | 0.59 real  | 0.57 user  | 0.01 sys | [FitDataProtocol](https://github.com/FitnessKit/FitDataProtocol)                 |
-| cpp      | fitsdkcpp       | sample.fit | 0.91 real  | 0.85 user  | 0.03 sys | [Official cpp SDK](https://developer.garmin.com/fit/example-projects/cpp/)       |
-| python   | fitfitdecode.py | sample.fit | 1.10 real  | 1.09 user  | 0.01 sys | [fitdecode](https://github.com/polyvertex/fitdecode)                             |
-| python   | fitfitparse.py  | sample.fit | 1.35 real  | 1.33 user  | 0.01 sys | [python-fitparse](https://github.com/dtcooper/python-fitparse)                   |
-| swift/c  | fitparser       | large.fit  | 0.50 real  | 0.48 user  | 0.01 sys | [FitFileParser](https://github.com/roznet/FitFileParser)                         |
-| php      | fitanalysis.php | large.fit  | 5.43 real  | 5.36 user  | 0.04 sys | [phpFITFileAnalysis.php](https://github.com/adriangibbons/php-fit-file-analysis) |
-| swift    | fitprotocol     | large.fit  | 8.22 real  | 8.09 user  | 0.12 sys | [FitDataProtocol](https://github.com/FitnessKit/FitDataProtocol)                 |
-| cpp      | fitsdkcpp       | large.fit  | 19.94 real | 19.47 user | 0.46 sys | [Official cpp SDK](https://developer.garmin.com/fit/example-projects/cpp/)       |
-| python   | fitfitdecode.py | large.fit  | 11.38 real | 11.32 user | 0.06 sys | [fitdecode](https://github.com/polyvertex/fitdecode)                             |
-| python   | fitfitparse.py  | large.fit  | 14.20 real | 14.13 user | 0.07 sys | [python-fitparse](https://github.com/dtcooper/python-fitparse)                   |
-
 ### Time reported inside the tool
 
 | language | command         | file       | time           | Library                                                                          |
 |----------|-----------------|------------|----------------|----------------------------------------------------------------------------------|
-| swift/c  | fitparser       | sample.fit | 0.033 seconds  | [FitFileParser](https://github.com/roznet/FitFileParser)                         |
-| php      | fitanalysis.php | sample.fit | 0.098 seconds  | [phpFITFileAnalysis.php](https://github.com/adriangibbons/php-fit-file-analysis) |
-| swift    | fitprotocol     | sample.fit | 0.526 seconds  | [FitDataProtocol](https://github.com/FitnessKit/FitDataProtocol)                 |
-| cpp      | fitsdkcpp       | sample.fit | 0.848 seconds  | [Official cpp SDK](https://developer.garmin.com/fit/example-projects/cpp/)       |
-| python   | fitfitdecode.py | sample.fit | 1.058 seconds  | [fitdecode](https://github.com/polyvertex/fitdecode)                             |
-| python   | fitfitparse.py  | sample.fit | 1.288 seconds  | [python-fitparse](https://github.com/dtcooper/python-fitparse)                   |
-| swift/c  | fitparser       | large.fit  | 0.496 seconds  | [FitFileParser](https://github.com/roznet/FitFileParser)                         |
-| php      | fitanalysis.php | large.fit  | 5.373 seconds  | [phpFITFileAnalysis.php](https://github.com/adriangibbons/php-fit-file-analysis) |
-| swift    | fitprotocol     | large.fit  | 7.747 seconds  | [FitDataProtocol](https://github.com/FitnessKit/FitDataProtocol)                 |
-| python   | fitfitdecode.py | large.fit  | 11.104 seconds | [fitdecode](https://github.com/polyvertex/fitdecode)                             |
-| python   | fitfitparse.py  | large.fit  | 13.875 seconds | [python-fitparse](https://github.com/dtcooper/python-fitparse)                   |
-| cpp      | fitsdkcpp       | large.fit  | 19.273 seconds | [Official cpp SDK](https://developer.garmin.com/fit/example-projects/cpp/)       |
-|          |                 |            |                |                                                                                  |
+| swift/c  | fitparser       | sample.fit | 0.034 seconds  | [FitFileParser](https://github.com/roznet/FitFileParser)                         |
+| php      | fitanalysis.php | sample.fit | 0.100 seconds  | [phpFITFileAnalysis.php](https://github.com/adriangibbons/php-fit-file-analysis) |
+| swift    | fitprotocol     | sample.fit | 0.535 seconds  | [FitDataProtocol](https://github.com/FitnessKit/FitDataProtocol)                 |
+| cpp      | fitsdkcpp       | sample.fit | 0.871 seconds  | [Official cpp SDK](https://developer.garmin.com/fit/example-projects/cpp/)       |
+| python   | fitfitdecode.py | sample.fit | 1.081 seconds  | [fitdecode](https://github.com/polyvertex/fitdecode)                              |
+| python   | fitfitparse.py  | sample.fit | 1.298 seconds  | [python-fitparse](https://github.com/dtcooper/python-fitparse)                   |
+| swift/c  | fitparser       | large.fit  | 0.511 seconds  | [FitFileParser](https://github.com/roznet/FitFileParser)                         |
+| php      | fitanalysis.php | large.fit  | 5.401 seconds  | [phpFITFileAnalysis.php](https://github.com/adriangibbons/php-fit-file-analysis) |
+| swift    | fitprotocol     | large.fit  | 7.645 seconds  | [FitDataProtocol](https://github.com/FitnessKit/FitDataProtocol)                 |
+| python   | fitfitdecode.py | large.fit  | 11.308 seconds | [fitdecode](https://github.com/polyvertex/fitdecode)                              |
+| python   | fitfitparse.py  | large.fit  | 13.886 seconds | [python-fitparse](https://github.com/dtcooper/python-fitparse)                   |
+| cpp      | fitsdkcpp       | large.fit  | 18.503 seconds | [Official cpp SDK](https://developer.garmin.com/fit/example-projects/cpp/)       |
+
+

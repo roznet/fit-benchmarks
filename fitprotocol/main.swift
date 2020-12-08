@@ -62,7 +62,7 @@ struct FitCompare: ParsableCommand {
         print( "record: \(records.count)")
         let elapsed = Date().timeIntervalSince(start)
         let f = URL(fileURLWithPath: self.file).lastPathComponent
-        print( "time: fitprotocol \(f) \(elapsed) seconds" )
+        print( String(format: "| swift | fitprotocol | %@ | %.3f seconds | [FitDataProtocol](https://github.com/FitnessKit/FitDataProtocol) | ", f, elapsed) )
     }
 }
 
