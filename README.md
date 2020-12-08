@@ -1,4 +1,4 @@
-## Benchmarking Fit file parsing library
+## Benchmarking of a few Fit file parsing libraries
 
 [ConnectStats](https://github.com/roznet/connectstats) is an iOS application that displays and analyse workout saved in Garmin or Strava. Since it started using the new Garmin Health API, the core input files where in the [FIT Format or Flexible and Interoperable Data Transfer](https://developer.garmin.com/fit/overview/).
 
