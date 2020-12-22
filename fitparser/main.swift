@@ -8,7 +8,6 @@
 import Foundation
 import ArgumentParser
 import FitFileParser
-import FitFileParserTypes
 
 struct FitJson: ParsableCommand {
     @Argument(help: "The file to parse")
@@ -19,7 +18,7 @@ struct FitJson: ParsableCommand {
         let start : Date = Date()
         if let fitfile = FitFile(file: URL(fileURLWithPath: self.file)) {
             let counts = fitfile.countByMessageType()
-            for messageType in [ FIT_MESG_NUM_RECORD, FIT_MESG_NUM_LAP] {
+            for messageType in [ FitMessageType.record, FitMessageType.lap] {
                 if let desc = fitfile.messageTypeDescription(messageType: messageType),
                    let count = counts[ messageType] {
                     print( "\(desc): \(count) messages")
