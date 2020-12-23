@@ -13,10 +13,10 @@ struct FitJson: ParsableCommand {
     @Argument(help: "The file to parse")
     var file: String
 
-    func run() throws{
+    func run_one(type : FitFile.ParsingType, tag : String) throws{
         
         let start : Date = Date()
-        if let fitfile = FitFile(file: URL(fileURLWithPath: self.file)) {
+        if let fitfile = FitFile(file: URL(fileURLWithPath: self.file), parsingType: type) {
             let counts = fitfile.countByMessageType()
             for messageType in [ FitMessageType.record, FitMessageType.lap ] {
                 if let desc = fitfile.messageTypeDescription(messageType: messageType),
@@ -27,8 +27,12 @@ struct FitJson: ParsableCommand {
         }
         let elapsed = Date().timeIntervalSince(start)
         let f = URL(fileURLWithPath: self.file).lastPathComponent
-        print( String(format: "| swift/c | fitparser | %@ | %.3f seconds | [FitFileParser](https://github.com/roznet/FitFileParser) | ", f, elapsed) )
+        print( String(format: "| swift/c | fitparser \(tag) | %@ | %.3f seconds | [FitFileParser](https://github.com/roznet/FitFileParser) | ", f, elapsed) )
 
+    }
+    func run() throws{
+        try run_one( type: FitFile.ParsingType.fast, tag: ".fast")
+        try run_one( type: FitFile.ParsingType.generic, tag: ".generic")
     }
 }
 

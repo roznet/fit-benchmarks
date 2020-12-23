@@ -5,21 +5,21 @@ INSTALLDIR=$(DEST)/usr/local/bin
 test:testsample testlarge
 
 testsample: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
-	time $(INSTALLDIR)/fitparser sample.fit
-	time $(INSTALLDIR)/fitprotocol sample.fit
-	time $(INSTALLDIR)/fitsdkcpp sample.fit
-	time php php/fitanalysis.php sample.fit
-	time python3 python/fitfitparse.py sample.fit
-	time python3 python/fitfitdecode.py sample.fit
+	$(INSTALLDIR)/fitparser sample.fit
+	$(INSTALLDIR)/fitprotocol sample.fit
+	$(INSTALLDIR)/fitsdkcpp sample.fit
+	php php/fitanalysis.php sample.fit
+	python3 python/fitfitparse.py sample.fit
+	python3 python/fitfitdecode.py sample.fit
 
 
 testlarge: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
-	time $(INSTALLDIR)/fitparser large.fit
-	time $(INSTALLDIR)/fitprotocol large.fit
-	time $(INSTALLDIR)/fitsdkcpp large.fit
-	time php php/fitanalysis.php large.fit
-	time python3 python/fitfitparse.py large.fit
-	time python3 python/fitfitdecode.py large.fit
+	$(INSTALLDIR)/fitparser large.fit
+	$(INSTALLDIR)/fitprotocol large.fit
+	$(INSTALLDIR)/fitsdkcpp large.fit
+	php php/fitanalysis.php large.fit
+	python3 python/fitfitparse.py large.fit
+	python3 python/fitfitdecode.py large.fit
 
 clean:
 	/bin/rm $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
