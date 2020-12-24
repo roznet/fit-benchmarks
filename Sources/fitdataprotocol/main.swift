@@ -9,7 +9,7 @@ import Foundation
 import ArgumentParser
 import FitDataProtocol
 
-struct FitCompare: ParsableCommand {
+struct fitdataprotocol : ParsableCommand {
     @Argument(help: "The file to parse")
     var file: String
 
@@ -66,4 +66,4 @@ struct FitCompare: ParsableCommand {
     }
 }
 
-FitCompare.main()
+fitdataprotocol.main()

@@ -9,7 +9,7 @@ import Foundation
 import ArgumentParser
 import FitFileParser
 
-struct FitJson: ParsableCommand {
+struct fitparser : ParsableCommand {
     @Argument(help: "The file to parse")
     var file: String
 
@@ -36,5 +36,5 @@ struct FitJson: ParsableCommand {
     }
 }
 
-FitJson.main()
+fitparser.main()
 

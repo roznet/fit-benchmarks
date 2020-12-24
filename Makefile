@@ -1,12 +1,12 @@
 
 DEST=./bin
-INSTALLDIR=$(DEST)/usr/local/bin
+INSTALLDIR=$(DEST)
 
 test:testsample testlarge
 
 testsample: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
 	$(INSTALLDIR)/fitparser sample.fit
-	$(INSTALLDIR)/fitprotocol sample.fit
+	$(INSTALLDIR)/fitdataprotocol sample.fit
 	$(INSTALLDIR)/fitsdkcpp sample.fit
 	php php/fitanalysis.php sample.fit
 	python3 python/fitfitparse.py sample.fit
@@ -15,7 +15,7 @@ testsample: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fits
 
 testlarge: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
 	$(INSTALLDIR)/fitparser large.fit
-	$(INSTALLDIR)/fitprotocol large.fit
+	$(INSTALLDIR)/fitdataprotocol large.fit
 	$(INSTALLDIR)/fitsdkcpp large.fit
 	php php/fitanalysis.php large.fit
 	python3 python/fitfitparse.py large.fit
@@ -25,10 +25,14 @@ clean:
 	/bin/rm $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
 
 $(INSTALLDIR)/fitparser:
-	xcodebuild -scheme fitparser DSTROOT=$(DEST) install
+	swift build -c release --target fitparser
+	/bin/cp `swift build -c release --target fitparser --show-bin-path`/fitparser $(DEST)
 
 $(INSTALLDIR)/fitprotocol:
-	xcodebuild -scheme fitprotocol DSTROOT=$(DEST) install
+	swift build -c release --target fitdataprotocol
+	/bin/cp `swift build -c release --target fitdataprotocol --show-bin-path`/fitdataprotocol $(DEST)
+
 
 $(INSTALLDIR)/fitsdkcpp:
 	xcodebuild -scheme fitsdkcpp DSTROOT=$(DEST) install
+	/bin/mv $(DEST)/usr/local/bin/fitsdkcpp $(DEST)
