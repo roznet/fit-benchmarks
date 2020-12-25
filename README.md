@@ -50,3 +50,23 @@ Given the two fastest library are the one used in practice by [ConnectStats](htt
 | python   | fitfitdecode.py    | large.fit  | 11.056 seconds | [fitdecode](https://github.com/polyvertex/fitdecode)                             |
 | python   | fitfitparse.py     | large.fit  | 13.930 seconds | [python-fitparse](https://github.com/dtcooper/python-fitparse)                   |
 | cpp      | fitsdkcpp          | large.fit  | 16.823 seconds | [Official cpp SDK](https://developer.garmin.com/fit/example-projects/cpp/)       |
+
+### Time accross architecture
+
+Here is a comparison of running the parsing benchmark across a few architecture. The primary use case for the library being [ConnectStats](https://github.com/roznet/connectstats) on iPhone, so here the benchmarks is compared accross an intel Macbook pro 16'' 2019, Apple Silicon Macbook Air 2020 and iPhone 12 Pro. It's quite interesting that the iphone and the macbook air both beat the MacBook pro...
+
+| cpu                  | language | command            | file       | time          |
+|----------------------|----------|--------------------|------------|---------------|
+| macbook pro intel i9 | swift/c  | fitparser .fast    | sample.fit | 0.034 seconds |
+| macbook air M1       | swift/c  | fitparser .fast    | sample.fit | 0.022 seconds |
+| iPhone 12 Pro        | swift/c  | fitparser .fast    | sample.fit | 0.024 seconds |
+| macbook pro intel i9 | swift/c  | fitparser .generic | sample.fit | 0.174 seconds |
+| macbook air M1       | swift/c  | fitparser .generic | sample.fit | 0.120 seconds |
+| iPhone 12 Pro        | swift/c  | fitparser .generic | sample.fit | 0.127 seconds |
+| macbook pro intel i9 | swift/c  | fitparser .fast    | large.fit  | 0.510 seconds |
+| macbook air M1       | swift/c  | fitparser .fast    | large.fit  | 0.335 seconds |
+| iPhone 12 Pro        | swift/c  | fitparser .fast    | large.fit  | 0.327 seconds |
+| macbook pro intel i9 | swift/c  | fitparser .generic | large.fit  | 1.486 seconds |
+| macbook air M1       | swift/c  | fitparser .generic | large.fit  | 1.042 seconds |
+| iPhone 12 Pro        | swift/c  | fitparser .generic | large.fit  | 1.097 seconds |
+
