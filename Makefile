@@ -4,7 +4,7 @@ INSTALLDIR=$(DEST)
 
 test:testsample testlarge
 
-testsample: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
+testsample: $(INSTALLDIR)/fitsdkcpp
 	swift run -c release fitparser sample.fit
 	swift run -c release fitdataprotocol sample.fit
 	$(INSTALLDIR)/fitsdkcpp sample.fit
@@ -13,7 +13,7 @@ testsample: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fits
 	python3 python/fitfitdecode.py sample.fit
 
 
-testlarge: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
+testlarge: $(INSTALLDIR)/fitsdkcpp
 	swift run -c release fitparser large.fit
 	swift run -c release fitdataprotocol large.fit
 	$(INSTALLDIR)/fitsdkcpp large.fit
@@ -23,12 +23,6 @@ testlarge: $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsd
 
 clean:
 	/bin/rm $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
-
-$(INSTALLDIR)/fitparser:
-	swift build -c release --target fitparser
-
-$(INSTALLDIR)/fitprotocol:
-	swift build -c release --target fitdataprotocol
 
 
 $(INSTALLDIR)/fitsdkcpp:
