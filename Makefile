@@ -11,6 +11,7 @@ testsample: $(INSTALLDIR)/fitsdkcpp
 	php php/fitanalysis.php sample.fit
 	python3 python/fitfitparse.py sample.fit
 	python3 python/fitfitdecode.py sample.fit
+	node javascript sample.fit
 
 
 testlarge: $(INSTALLDIR)/fitsdkcpp
@@ -20,6 +21,7 @@ testlarge: $(INSTALLDIR)/fitsdkcpp
 	php php/fitanalysis.php large.fit
 	python3 python/fitfitparse.py large.fit
 	python3 python/fitfitdecode.py large.fit
+	node javascript large.fit
 
 clean:
 	/bin/rm $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp

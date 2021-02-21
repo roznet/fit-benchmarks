@@ -19,7 +19,10 @@ This lead to a quick benchmarking of the different libraries. We'll review swift
 - [phpFITFileAnalysis.php](https://github.com/adriangibbons/php-fit-file-analysis) is a php library used by the [ConnectStats server](https://github.com/roznet/connectstats_server)
 - [python-fitparse](https://github.com/dtcooper/python-fitparse) is a python library
 - [fitdecode](https://github.com/polyvertex/fitdecode) is a python library
+- [fit-file-parser.js](https://github.com/jimmykane/fit-parser) a javascript library (*)
 - [Official cpp SDK](https://developer.garmin.com/fit/example-projects/cpp/) is the official cpp sdk.
+
+(*) thanks to [karaul](https://github.com/karaul/fitplotter) for the help.
 
 ## Results
 
