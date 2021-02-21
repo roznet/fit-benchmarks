@@ -1,0 +1,29 @@
+{
+  "name": "fitbenchmark",
+  "version": "1.0.0",
+  "description": "Benchmark javascript library parsing fit files",
+  "main": "benchmark.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "benchmark": "./benchmark.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roznet/fit-benchmarks.git"
+  },
+  "keywords": [
+    "fit",
+    "benchmarks"
+  ],
+  "author": "Brice Rosenzweig",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roznet/fit-benchmarks/issues"
+  },
+  "homepage": "https://github.com/roznet/fit-benchmarks#readme",
+  "dependencies": {
+    "fit-file-parser": "^1.9.0"
+  }
+}
