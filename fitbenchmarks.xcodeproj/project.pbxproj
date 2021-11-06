@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4253ABF32736A09C00EAA85E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4253ABF22736A09C00EAA85E /* main.swift */; };
+		4253ABFB2736A12B00EAA85E /* FIT in Frameworks */ = {isa = PBXBuildFile; productRef = 4253ABFA2736A12B00EAA85E /* FIT */; };
+		4253ABFD2736B75500EAA85E /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 4253ABFC2736B75500EAA85E /* ArgumentParser */; };
 		4286E2DC2594D9180010DFF8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286E2DB2594D90A0010DFF8 /* main.swift */; };
 		4286E2E02594D9200010DFF8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286E2D92594D90A0010DFF8 /* main.swift */; };
 		4286E2E42594D9250010DFF8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4286E2D72594D90A0010DFF8 /* main.cpp */; };
@@ -41,6 +44,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		4253ABEE2736A09C00EAA85E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		4265FDF5257E3C0300D562DF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,6 +83,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4253ABF02736A09C00EAA85E /* fitsdkobjc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fitsdkobjc; sourceTree = BUILT_PRODUCTS_DIR; };
+		4253ABF22736A09C00EAA85E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4253ABF82736A0F400EAA85E /* objcpp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = objcpp; path = Sources/fitsdkobjc/objcpp; sourceTree = "<group>"; };
+		4253ABF92736A11600EAA85E /* objcpp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = objcpp; sourceTree = "<group>"; };
 		4265FDF7257E3C0300D562DF /* fitsdkcpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fitsdkcpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		4286E1ED2594D9090010DFF8 /* fit_power_zone_mesg_listener.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = fit_power_zone_mesg_listener.hpp; sourceTree = "<group>"; };
 		4286E1EE2594D9090010DFF8 /* fit_segment_point_mesg_listener.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = fit_segment_point_mesg_listener.hpp; sourceTree = "<group>"; };
@@ -314,6 +330,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4253ABED2736A09C00EAA85E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4253ABFD2736B75500EAA85E /* ArgumentParser in Frameworks */,
+				4253ABFB2736A12B00EAA85E /* FIT in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4265FDF4257E3C0300D562DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,9 +367,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4253AA692736A07000EAA85E /* fitsdkobjc */ = {
+			isa = PBXGroup;
+			children = (
+				4253ABF92736A11600EAA85E /* objcpp */,
+				4253ABF22736A09C00EAA85E /* main.swift */,
+			);
+			path = fitsdkobjc;
+			sourceTree = "<group>";
+		};
+		4253ABF72736A0F400EAA85E /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4253ABF82736A0F400EAA85E /* objcpp */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		4286E1EA2594D9090010DFF8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4253AA692736A07000EAA85E /* fitsdkobjc */,
 				4286E1EB2594D9090010DFF8 /* fitsdkcpp */,
 				4286E2D82594D90A0010DFF8 /* fitdataprotocol */,
 				4286E2DA2594D90A0010DFF8 /* fitparser */,
@@ -621,6 +664,7 @@
 		42E8808C257D6F2A0024546F = {
 			isa = PBXGroup;
 			children = (
+				4253ABF72736A0F400EAA85E /* Packages */,
 				4286E1EA2594D9090010DFF8 /* Sources */,
 				42E88096257D6F2A0024546F /* Products */,
 				42E880B7257D70D30024546F /* Frameworks */,
@@ -633,6 +677,7 @@
 				42E88095257D6F2A0024546F /* fitparser */,
 				42E880A4257D6F5F0024546F /* fitprotocol */,
 				4265FDF7257E3C0300D562DF /* fitsdkcpp */,
+				4253ABF02736A09C00EAA85E /* fitsdkobjc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -647,6 +692,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4253ABEF2736A09C00EAA85E /* fitsdkobjc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4253ABF42736A09C00EAA85E /* Build configuration list for PBXNativeTarget "fitsdkobjc" */;
+			buildPhases = (
+				4253ABEC2736A09C00EAA85E /* Sources */,
+				4253ABED2736A09C00EAA85E /* Frameworks */,
+				4253ABEE2736A09C00EAA85E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fitsdkobjc;
+			packageProductDependencies = (
+				4253ABFA2736A12B00EAA85E /* FIT */,
+				4253ABFC2736B75500EAA85E /* ArgumentParser */,
+			);
+			productName = fitsdkobjc;
+			productReference = 4253ABF02736A09C00EAA85E /* fitsdkobjc */;
+			productType = "com.apple.product-type.tool";
+		};
 		4265FDF6257E3C0300D562DF /* fitsdkcpp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4265FDFD257E3C0300D562DF /* Build configuration list for PBXNativeTarget "fitsdkcpp" */;
@@ -712,9 +778,12 @@
 		42E8808D257D6F2A0024546F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1220;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					4253ABEF2736A09C00EAA85E = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					4265FDF6257E3C0300D562DF = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -747,11 +816,20 @@
 				42E88094257D6F2A0024546F /* fitparser */,
 				42E880A3257D6F5F0024546F /* fitprotocol */,
 				4265FDF6257E3C0300D562DF /* fitsdkcpp */,
+				4253ABEF2736A09C00EAA85E /* fitsdkobjc */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4253ABEC2736A09C00EAA85E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4253ABF32736A09C00EAA85E /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4265FDF3257E3C0300D562DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -803,9 +881,38 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		4253ABF52736A09C00EAA85E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M7QSSF3624;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4253ABF62736A09C00EAA85E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M7QSSF3624;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		4265FDFB257E3C0300D562DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7QSSF3624;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -817,6 +924,7 @@
 		4265FDFC257E3C0300D562DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7QSSF3624;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -943,6 +1051,7 @@
 		42E8809D257D6F2A0024546F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7QSSF3624;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -954,6 +1063,7 @@
 		42E8809E257D6F2A0024546F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7QSSF3624;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -965,6 +1075,7 @@
 		42E880A9257D6F5F0024546F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7QSSF3624;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -976,6 +1087,7 @@
 		42E880AA257D6F5F0024546F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7QSSF3624;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -987,6 +1099,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4253ABF42736A09C00EAA85E /* Build configuration list for PBXNativeTarget "fitsdkobjc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4253ABF52736A09C00EAA85E /* Debug */,
+				4253ABF62736A09C00EAA85E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4265FDFD257E3C0300D562DF /* Build configuration list for PBXNativeTarget "fitsdkcpp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1053,6 +1174,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4253ABFA2736A12B00EAA85E /* FIT */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FIT;
+		};
+		4253ABFC2736B75500EAA85E /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42E880B2257D6FF60024546F /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
 		42E880B3257D6FF60024546F /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 42E880B2257D6FF60024546F /* XCRemoteSwiftPackageReference "swift-argument-parser" */;

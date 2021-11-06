@@ -4,20 +4,22 @@ INSTALLDIR=$(DEST)
 
 test:testsample testlarge
 
-testsample: $(INSTALLDIR)/fitsdkcpp
+testsample: $(INSTALLDIR)/fitsdkcpp $(INSTALLDIR)/fitsdkobjc
 	swift run -c release fitparser sample.fit
 	swift run -c release fitdataprotocol sample.fit
 	$(INSTALLDIR)/fitsdkcpp sample.fit
+	$(INSTALLDIR)/fitsdkobjc sample.fit
 	php php/fitanalysis.php sample.fit
 	python3 python/fitfitparse.py sample.fit
 	python3 python/fitfitdecode.py sample.fit
 	node javascript sample.fit
 
 
-testlarge: $(INSTALLDIR)/fitsdkcpp
+testlarge: $(INSTALLDIR)/fitsdkcpp $(INSTALLDIR)/fitsdkobjc
 	swift run -c release fitparser large.fit
 	swift run -c release fitdataprotocol large.fit
 	$(INSTALLDIR)/fitsdkcpp large.fit
+	$(INSTALLDIR)/fitsdkobjc large.fit
 	php php/fitanalysis.php large.fit
 	python3 python/fitfitparse.py large.fit
 	python3 python/fitfitdecode.py large.fit
@@ -26,6 +28,9 @@ testlarge: $(INSTALLDIR)/fitsdkcpp
 clean:
 	/bin/rm $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
 
+$(INSTALLDIR)/fitsdkobjc:
+	xcodebuild -scheme fitsdkobjc DSTROOT=$(DEST) install
+	/bin/mv $(DEST)/usr/local/bin/fitsdkobjc $(DEST)
 
 $(INSTALLDIR)/fitsdkcpp:
 	xcodebuild -scheme fitsdkcpp DSTROOT=$(DEST) install
