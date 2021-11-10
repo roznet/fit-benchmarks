@@ -1,32 +1,51 @@
 
 DEST=./bin
 INSTALLDIR=$(DEST)
-
-test:testsample testlarge
-
-testsample: $(INSTALLDIR)/fitsdkcpp $(INSTALLDIR)/fitsdkobjc
-	swift run -c release fitparser sample.fit
-	swift run -c release fitdataprotocol sample.fit
-	$(INSTALLDIR)/fitsdkcpp sample.fit
-	$(INSTALLDIR)/fitsdkobjc sample.fit
-	php php/fitanalysis.php sample.fit
-	python3 python/fitfitparse.py sample.fit
-	python3 python/fitfitdecode.py sample.fit
-	node javascript sample.fit
+OUT=./out
+TESTS=fitparser fitdataprotocol fitsdkcpp fitsdkobjc fitanalysis fitfitparse fitfitdecode javascript
+TESTS_SAMPLE=$(patsubst %,$(OUT)/%_sample.md,$(TESTS))
+TESTS_LARGE=$(patsubst %,$(OUT)/%_large.md,$(TESTS))
 
 
-testlarge: $(INSTALLDIR)/fitsdkcpp $(INSTALLDIR)/fitsdkobjc
-	swift run -c release fitparser large.fit
-	swift run -c release fitdataprotocol large.fit
-	$(INSTALLDIR)/fitsdkcpp large.fit
-	$(INSTALLDIR)/fitsdkobjc large.fit
-	php php/fitanalysis.php large.fit
-	python3 python/fitfitparse.py large.fit
-	python3 python/fitfitdecode.py large.fit
-	node javascript large.fit
+
+testsample: $(OUT) $(TESTS_SAMPLE)
+	@grep -h '|' $(OUT)/*sample.md
+
+testlarge: $(OUT) $(TESTS_LARGE)
+	@grep -h '|' $(OUT)/*large.md
+
+all: $(OUT) $(TESTS_SAMPLE) $(TESTS_LARGE)
+	@grep -h '|' $(OUT)/*.md
+	
+$(OUT):
+	mkdir $(OUT)
+
+$(OUT)/fitparser_%.md: Sources/fitparser/main.swift
+	swift run -c release fitparser $*.fit > $@
+
+$(OUT)/fitdataprotocol_%.md: Sources/fitdataprotocol/main.swift
+	swift run -c release fitdataprotocol $*.fit > $@
+
+$(OUT)/fitsdkcpp_%.md: $(INSTALLDIR)/fitsdkcpp
+	$(INSTALLDIR)/fitsdkcpp $*.fit > $@
+
+$(OUT)/fitsdkobjc_%.md: $(INSTALLDIR)/fitsdkobjc
+	$(INSTALLDIR)/fitsdkobjc $*.fit > $@
+
+$(OUT)/fitanalysis_%.md: php/fitanalysis.php
+	php php/fitanalysis.php $*.fit > $@
+
+$(OUT)/fitfitparse_%.md: python/fitfitparse.py
+	python3 python/fitfitparse.py $*.fit > $@
+
+$(OUT)/fitfitdecode_%.md: python/fitfitdecode.py
+	python3 python/fitfitdecode.py $*.fit > $@
+
+$(OUT)/javascript_%.md: javascript/benchmark.js
+	node javascript $*.fit > $@
 
 clean:
-	/bin/rm $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
+	/bin/rm $(OUT)/*.md $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
 
 $(INSTALLDIR)/fitsdkobjc:
 	xcodebuild -scheme fitsdkobjc DSTROOT=$(DEST) install
