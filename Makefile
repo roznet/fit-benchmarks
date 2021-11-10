@@ -6,8 +6,6 @@ TESTS=fitparser fitdataprotocol fitsdkcpp fitsdkobjc fitanalysis fitfitparse fit
 TESTS_SAMPLE=$(patsubst %,$(OUT)/%_sample.md,$(TESTS))
 TESTS_LARGE=$(patsubst %,$(OUT)/%_large.md,$(TESTS))
 
-
-
 testsample: $(OUT) $(TESTS_SAMPLE)
 	@grep -h '|' $(OUT)/*sample.md
 
@@ -45,12 +43,12 @@ $(OUT)/javascript_%.md: javascript/benchmark.js
 	node javascript $*.fit > $@
 
 clean:
-	/bin/rm $(OUT)/*.md $(INSTALLDIR)/fitparser $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
+	/bin/rm -f $(OUT)/*.md $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
 
-$(INSTALLDIR)/fitsdkobjc:
-	xcodebuild -scheme fitsdkobjc DSTROOT=$(DEST) install
-	/bin/mv $(DEST)/usr/local/bin/fitsdkobjc $(DEST)
+.SECONDARY: $(INSTALLDIR)/fitsdkobjc $(INSTALLDIR)/fitsdkcpp
+	
+$(INSTALLDIR)/%:
+	xcodebuild -scheme $* DSTROOT=$(DEST) install
+	/bin/mv $(DEST)/usr/local/bin/$* $(DEST)
 
-$(INSTALLDIR)/fitsdkcpp:
-	xcodebuild -scheme fitsdkcpp DSTROOT=$(DEST) install
-	/bin/mv $(DEST)/usr/local/bin/fitsdkcpp $(DEST)
+
