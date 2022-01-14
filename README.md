@@ -21,8 +21,10 @@ This lead to a quick benchmarking of the different libraries. We'll review swift
 - [fitdecode](https://github.com/polyvertex/fitdecode) is a python library
 - [fit-file-parser.js](https://github.com/jimmykane/fit-parser) a javascript library (*)
 - [Official cpp SDK](https://developer.garmin.com/fit/example-projects/cpp/) is the official cpp sdk.
+- [fit](https://github.com/tormoder/fit) is a go implementation (*)
 
-(*) thanks to [karaul](https://github.com/karaul/fitplotter) for the help.
+(*) thanks to [karaul](https://github.com/karaul/fitplotter) for the javascript help and [tormoder](https://github.com/tormoder/fit) for the go contribution.
+
 
 ## Results
 
