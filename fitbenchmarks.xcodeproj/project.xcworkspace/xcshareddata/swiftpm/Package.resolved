@@ -29,12 +29,12 @@
         }
       },
       {
-        "package": "FitFileparser",
+        "package": "FitFileParser",
         "repositoryURL": "https://github.com/roznet/FitFileParser.git",
         "state": {
           "branch": null,
-          "revision": "210e36d96b92acde9a88d6852cbfbf3cfc2be308",
-          "version": "1.1.1"
+          "revision": "f142941777e5bf1dcb2af0762b7987146df819c8",
+          "version": "1.4.5"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/apple/swift-argument-parser",
         "state": {
           "branch": null,
-          "revision": "92646c0cdbaca076c8d3d0207891785b3379cbff",
-          "version": "0.3.1"
+          "revision": "6b2aa2748a7881eebb9f84fb10c01293e15b52ca",
+          "version": "0.5.0"
         }
       }
     ]
