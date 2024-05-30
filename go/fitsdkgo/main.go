@@ -39,5 +39,5 @@ func main() {
 
 	elapsed := time.Since(begin)
 
-	fmt.Printf("| go | fitsdkgo | %s | %.3f seconds | [Fit SDK for Go](https://github.com/muktihari/fit) |\n", filename, elapsed.Seconds())
+	fmt.Printf("| go | fitsdkgo | %s | %.3f seconds | [FIT SDK for Go](https://github.com/muktihari/fit) |\n", filename, elapsed.Seconds())
 }

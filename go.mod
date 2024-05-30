@@ -1,6 +1,6 @@
 module roznet/fit-benchmarks
 
-go 1.17
+go 1.20
 
 require (
 	github.com/muktihari/fit v0.19.1
