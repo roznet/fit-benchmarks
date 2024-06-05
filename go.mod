@@ -3,7 +3,7 @@ module roznet/fit-benchmarks
 go 1.20
 
 require (
-	github.com/muktihari/fit v0.19.1
+	github.com/muktihari/fit v0.20.0
 	github.com/tormoder/fit v0.15.0
 )
 
@@ -14,7 +14,7 @@ require (
 	github.com/gordonklaus/ineffassign v0.1.0 // indirect
 	github.com/kisielk/errcheck v1.7.0 // indirect
 	github.com/mdempsky/unconvert v0.0.0-20230907125504-415706980c06 // indirect
-	golang.org/x/exp v0.0.0-20240530194437-404ba88c7ed0 // indirect
+	golang.org/x/exp v0.0.0-20240531132922-fd00a4e0eefc // indirect
 	golang.org/x/exp/typeparams v0.0.0-20221208152030-732eee02a75a // indirect
 	golang.org/x/mod v0.17.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
