@@ -2,7 +2,9 @@
 DEST=./bin
 INSTALLDIR=$(DEST)
 OUT=./out
-TESTS=fitparser fitdataprotocol fitsdkcpp fitsdkobjc fitanalysis fitfitparse fitfitdecode javascript go
+# removed fitdataprotocol due to link error
+#TESTS=fitparser fitdataprotocol fitsdkswift fitsdkcpp fitsdkobjc fitanalysis fitfitparse fitfitdecode javascript go
+TESTS=fitparser fitsdkswift
 TESTS_SAMPLE=$(patsubst %,$(OUT)/%_sample.md,$(TESTS))
 TESTS_LARGE=$(patsubst %,$(OUT)/%_large.md,$(TESTS))
 
@@ -20,6 +22,9 @@ $(OUT):
 
 $(OUT)/fitparser_%.md: Sources/fitparser/main.swift
 	swift run -c release fitparser $*.fit > $@
+
+$(OUT)/fitsdkswift_%.md: Sources/fitsdkswift/main.swift
+	swift run -c release fitsdkswift $*.fit > $@
 
 $(OUT)/fitdataprotocol_%.md: Sources/fitdataprotocol/main.swift
 	swift run -c release fitdataprotocol $*.fit > $@

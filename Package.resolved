@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "FITSwiftSDK",
+        "repositoryURL": "https://github.com/garmin/fit-swift-sdk.git",
+        "state": {
+          "branch": null,
+          "revision": "ad2064680dcef4c5247ed059d18401150c7c2270",
+          "version": "21.171.0"
+        }
+      },
+      {
         "package": "FitDataProtocol",
         "repositoryURL": "https://github.com/FitnessKit/FitDataProtocol",
         "state": {
@@ -33,7 +42,7 @@
         "repositoryURL": "https://github.com/roznet/FitFileParser",
         "state": {
           "branch": "main",
-          "revision": "7b57e7577cf4e543ccc4e5af0d2ec77669c60b8d",
+          "revision": "c4c1379393aa4f25ad63733949e009f330a90214",
           "version": null
         }
       },
@@ -51,8 +60,8 @@
         "repositoryURL": "https://github.com/apple/swift-argument-parser",
         "state": {
           "branch": null,
-          "revision": "92646c0cdbaca076c8d3d0207891785b3379cbff",
-          "version": "0.3.1"
+          "revision": "6b2aa2748a7881eebb9f84fb10c01293e15b52ca",
+          "version": "0.5.0"
         }
       }
     ]

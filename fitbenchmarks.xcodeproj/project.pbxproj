@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,6 +41,8 @@
 		42E880B9257D70D30024546F /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 42E880B8257D70D30024546F /* ArgumentParser */; };
 		42E880BC257D711D0024546F /* FitDataProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 42E880BB257D711D0024546F /* FitDataProtocol */; };
 		42E880CD257D97750024546F /* FitFileParser in Frameworks */ = {isa = PBXBuildFile; productRef = 42E880CC257D97750024546F /* FitFileParser */; };
+		92AAA76E2DCFE49700602A8B /* FITSwiftSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 92AAA76D2DCFE49700602A8B /* FITSwiftSDK */; };
+		92AAA7702DCFEED700602A8B /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 92AAA76F2DCFEED700602A8B /* ArgumentParser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +74,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		42E880A2257D6F5F0024546F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		92AAA7632DCFE43D00602A8B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -327,7 +338,22 @@
 		4286E2DB2594D90A0010DFF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		42E88095257D6F2A0024546F /* fitparser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fitparser; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E880A4257D6F5F0024546F /* fitprotocol */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fitprotocol; sourceTree = BUILT_PRODUCTS_DIR; };
+		92AAA7652DCFE43D00602A8B /* fitsdkswift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fitsdkswift; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		92AAA7722DCFF11500602A8B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				main.swift,
+			);
+			target = 92AAA7642DCFE43D00602A8B /* fitsdkswift */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		92AAA7662DCFE43D00602A8B /* fitsdkswift */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (92AAA7722DCFF11500602A8B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = fitsdkswift; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4253ABED2736A09C00EAA85E /* Frameworks */ = {
@@ -364,6 +390,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		92AAA7622DCFE43D00602A8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AAA7702DCFEED700602A8B /* ArgumentParser in Frameworks */,
+				92AAA76E2DCFE49700602A8B /* FITSwiftSDK in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -387,6 +422,7 @@
 		4286E1EA2594D9090010DFF8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				92AAA7662DCFE43D00602A8B /* fitsdkswift */,
 				4253AA692736A07000EAA85E /* fitsdkobjc */,
 				4286E1EB2594D9090010DFF8 /* fitsdkcpp */,
 				4286E2D82594D90A0010DFF8 /* fitdataprotocol */,
@@ -678,6 +714,7 @@
 				42E880A4257D6F5F0024546F /* fitprotocol */,
 				4265FDF7257E3C0300D562DF /* fitsdkcpp */,
 				4253ABF02736A09C00EAA85E /* fitsdkobjc */,
+				92AAA7652DCFE43D00602A8B /* fitsdkswift */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -772,13 +809,34 @@
 			productReference = 42E880A4257D6F5F0024546F /* fitprotocol */;
 			productType = "com.apple.product-type.tool";
 		};
+		92AAA7642DCFE43D00602A8B /* fitsdkswift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92AAA76B2DCFE43D00602A8B /* Build configuration list for PBXNativeTarget "fitsdkswift" */;
+			buildPhases = (
+				92AAA7612DCFE43D00602A8B /* Sources */,
+				92AAA7622DCFE43D00602A8B /* Frameworks */,
+				92AAA7632DCFE43D00602A8B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fitsdkswift;
+			packageProductDependencies = (
+				92AAA76D2DCFE49700602A8B /* FITSwiftSDK */,
+				92AAA76F2DCFEED700602A8B /* ArgumentParser */,
+			);
+			productName = fitsdkswift;
+			productReference = 92AAA7652DCFE43D00602A8B /* fitsdkswift */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		42E8808D257D6F2A0024546F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					4253ABEF2736A09C00EAA85E = {
@@ -792,6 +850,9 @@
 					};
 					42E880A3257D6F5F0024546F = {
 						CreatedOnToolsVersion = 12.2;
+					};
+					92AAA7642DCFE43D00602A8B = {
+						CreatedOnToolsVersion = 16.3;
 					};
 				};
 			};
@@ -808,6 +869,7 @@
 				42E880AD257D6F860024546F /* XCRemoteSwiftPackageReference "FitFileParser" */,
 				42E880B2257D6FF60024546F /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 				42E880BA257D711D0024546F /* XCRemoteSwiftPackageReference "FitDataProtocol" */,
+				92AAA76C2DCFE49700602A8B /* XCRemoteSwiftPackageReference "fit-swift-sdk" */,
 			);
 			productRefGroup = 42E88096257D6F2A0024546F /* Products */;
 			projectDirPath = "";
@@ -817,6 +879,7 @@
 				42E880A3257D6F5F0024546F /* fitprotocol */,
 				4265FDF6257E3C0300D562DF /* fitsdkcpp */,
 				4253ABEF2736A09C00EAA85E /* fitsdkobjc */,
+				92AAA7642DCFE43D00602A8B /* fitsdkswift */,
 			);
 		};
 /* End PBXProject section */
@@ -875,6 +938,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4286E2E02594D9200010DFF8 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AAA7612DCFE43D00602A8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1096,6 +1166,41 @@
 			};
 			name = Release;
 		};
+		92AAA7692DCFE43D00602A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RTBRKESTSS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		92AAA76A2DCFE43D00602A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RTBRKESTSS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1144,6 +1249,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		92AAA76B2DCFE43D00602A8B /* Build configuration list for PBXNativeTarget "fitsdkswift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92AAA7692DCFE43D00602A8B /* Debug */,
+				92AAA76A2DCFE43D00602A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1169,6 +1283,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.1.0;
+			};
+		};
+		92AAA76C2DCFE49700602A8B /* XCRemoteSwiftPackageReference "fit-swift-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/garmin/fit-swift-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.171.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1202,6 +1324,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 42E880AD257D6F860024546F /* XCRemoteSwiftPackageReference "FitFileParser" */;
 			productName = FitFileParser;
+		};
+		92AAA76D2DCFE49700602A8B /* FITSwiftSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92AAA76C2DCFE49700602A8B /* XCRemoteSwiftPackageReference "fit-swift-sdk" */;
+			productName = FITSwiftSDK;
+		};
+		92AAA76F2DCFEED700602A8B /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42E880B2257D6FF60024546F /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
