@@ -2,7 +2,7 @@
 DEST=./bin
 INSTALLDIR=$(DEST)
 OUT=./out
-TESTS=fitparser fitdataprotocol fitsdkcpp fitsdkobjc fitanalysis fitfitparse fitfitdecode javascript go
+TESTS=fitparser fitdataprotocol fitsdkcpp fitsdkobjc fitanalysis fitfitparse fitfitdecode javascript go fitsdkgo
 TESTS_SAMPLE=$(patsubst %,$(OUT)/%_sample.md,$(TESTS))
 TESTS_LARGE=$(patsubst %,$(OUT)/%_large.md,$(TESTS))
 
@@ -44,6 +44,9 @@ $(OUT)/javascript_%.md: javascript/benchmark.js
 
 $(OUT)/go_%.md: go/fit.go
 	go run go/fit.go $*.fit > $@
+
+$(OUT)/fitsdkgo_%.md: go/fitsdkgo/main.go
+	go run go/fitsdkgo/main.go $*.fit > $@
 
 clean:
 	/bin/rm -f $(OUT)/*.md $(INSTALLDIR)/fitprotocol $(INSTALLDIR)/fitsdkcpp
