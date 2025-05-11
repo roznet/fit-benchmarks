@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "FITSwiftSDK",
+        "repositoryURL": "https://github.com/garmin/fit-swift-sdk.git",
+        "state": {
+          "branch": null,
+          "revision": "ad2064680dcef4c5247ed059d18401150c7c2270",
+          "version": "21.171.0"
+        }
+      },
+      {
         "package": "FitDataProtocol",
         "repositoryURL": "https://github.com/FitnessKit/FitDataProtocol",
         "state": {
