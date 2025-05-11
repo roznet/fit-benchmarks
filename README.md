@@ -82,3 +82,44 @@ Here is a comparison of running the parsing benchmark across a few architecture.
 | macbook air M1       | swift/c  | fitparser .generic | large.fit  | 1.042 seconds |
 | iPhone 12 Pro        | swift/c  | fitparser .generic | large.fit  | 1.097 seconds |
 
+
+## Install Instructions
+
+### JavaScript Version
+
+1. Navigate to the `javascript` directory:
+   ```bash
+   cd javascript
+   ```
+2. Install dependencies using npm:
+   ```bash
+   npm install
+   ```
+3. You can then run the benchmark script (from the project root):
+   ```bash
+   node javascript benchmark.js <yourfile.fit>
+   ```
+
+### Python Version
+
+1. Create a Python virtual environment in the project root:
+   ```bash
+   python3 -m venv venv
+   ```
+2. Activate the virtual environment:
+   - On macOS/Linux:
+     ```bash
+     source venv/bin/activate
+     ```
+3. Install the required Python packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. You can then run the Python scripts:
+   ```bash
+   python python/fitfitparse.py <yourfile.fit>
+   python python/fitfitdecode.py <yourfile.fit>
+   ```
+
+_More setup instructions for other languages will be added as needed._
+

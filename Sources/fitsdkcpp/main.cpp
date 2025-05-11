@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
     
     clock_t end = clock();
     double elapsed_secs = double( end-begin)/CLOCKS_PER_SEC;
-    auto filepath = std::__fs::filesystem::path( argv[1] );
+    auto filepath = std::filesystem::path( argv[1] );
     printf( "records: %d messages\n", (int)listener.records.size());
     printf( "laps: %d messages\n", (int)listener.laps.size());
     printf( "| cpp | fitsdkcpp | %s | %.3f seconds | [Official cpp SDK](https://developer.garmin.com/fit/example-projects/cpp/) |\n", filepath.filename().c_str(), elapsed_secs);

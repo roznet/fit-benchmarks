@@ -1,0 +1,2 @@
+fitdecode>=0.10.0
+fitparse>=1.2.0 

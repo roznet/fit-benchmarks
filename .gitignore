@@ -12,3 +12,4 @@ xcuserdata
 __pycache__
 *.pyc 
 out
+venv

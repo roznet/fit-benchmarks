@@ -1,0 +1,58 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:fit-benchmarks}",
+            "name": "Debug fitsdkswift",
+            "program": "${workspaceFolder:fit-benchmarks}/.build/debug/fitsdkswift",
+            "preLaunchTask": "swift: Build Debug fitsdkswift"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:fit-benchmarks}",
+            "name": "Release fitsdkswift",
+            "program": "${workspaceFolder:fit-benchmarks}/.build/release/fitsdkswift",
+            "preLaunchTask": "swift: Build Release fitsdkswift"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:fit-benchmarks}",
+            "name": "Debug fitparser",
+            "program": "${workspaceFolder:fit-benchmarks}/.build/debug/fitparser",
+            "preLaunchTask": "swift: Build Debug fitparser"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:fit-benchmarks}",
+            "name": "Release fitparser",
+            "program": "${workspaceFolder:fit-benchmarks}/.build/release/fitparser",
+            "preLaunchTask": "swift: Build Release fitparser"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:fit-benchmarks}",
+            "name": "Debug fitdataprotocol",
+            "program": "${workspaceFolder:fit-benchmarks}/.build/debug/fitdataprotocol",
+            "preLaunchTask": "swift: Build Debug fitdataprotocol"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:fit-benchmarks}",
+            "name": "Release fitdataprotocol",
+            "program": "${workspaceFolder:fit-benchmarks}/.build/release/fitdataprotocol",
+            "preLaunchTask": "swift: Build Release fitdataprotocol"
+        }
+    ]
+}
